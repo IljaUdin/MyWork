@@ -1,0 +1,11 @@
+D:\C#\ComPort\packages\ILMerge.3.0.41\tools\net452 - брать из этой папки файлы и копировать в папку,
+где должна произойти инкапсуляция
+
+В строке путь к папке написать - cmd!!!
+
+
+ilmerge ReaderPorts.exe NModbus4.dll /out:NewReaderPorts.exe
+
+ReaderPorts.exe - название текущего exe
+NModbus4.dll - название dll, который нужно добавить
+NewReaderPorts.exe - новое название exe
