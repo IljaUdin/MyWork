@@ -1,0 +1,90 @@
+D:\C#\ComPort\ReaderPorts\bin\Debug\ReaderPorts.exe.config
+D:\C#\ComPort\ReaderPorts\bin\Debug\ReaderPorts.exe
+D:\C#\ComPort\ReaderPorts\bin\Debug\ReaderPorts.pdb
+D:\C#\ComPort\ReaderPorts\obj\Debug\ReaderPorts.csproj.AssemblyReference.cache
+D:\C#\ComPort\ReaderPorts\obj\Debug\ReaderPorts.csproj.SuggestedBindingRedirects.cache
+D:\C#\ComPort\ReaderPorts\obj\Debug\ReaderPorts.Properties.Resources.resources
+D:\C#\ComPort\ReaderPorts\obj\Debug\ReaderPorts.csproj.GenerateResource.cache
+D:\C#\ComPort\ReaderPorts\obj\Debug\ReaderPorts.csproj.CoreCompileInputs.cache
+D:\C#\ComPort\ReaderPorts\obj\Debug\ReaderPorts.exe
+D:\C#\ComPort\ReaderPorts\obj\Debug\ReaderPorts.pdb
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Options.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\System.Buffers.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\System.Memory.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\System.Numerics.Vectors.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Options.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\System.Buffers.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\System.Memory.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\System.Numerics.Vectors.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\C#\ComPort\ReaderPorts\obj\Debug\ReaderPorts.csproj.CopyComplete
+D:\C#\ComPort\ReaderPorts\bin\Debug\CsvHelper.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\CsvHelper.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\C#\ComPort\ReaderPorts\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\ReaderPorts.exe.config
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\ReaderPorts.exe
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\ReaderPorts.pdb
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\CsvHelper.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Options.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\System.Buffers.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\System.Memory.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\System.Numerics.Vectors.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\CsvHelper.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Options.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\System.Buffers.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\System.Memory.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\System.Numerics.Vectors.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\obj\Debug\ReaderPorts.csproj.AssemblyReference.cache
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\obj\Debug\ReaderPorts.csproj.SuggestedBindingRedirects.cache
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\obj\Debug\ReaderPorts.Form1.resources
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\obj\Debug\ReaderPorts.Properties.Resources.resources
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\obj\Debug\ReaderPorts.csproj.GenerateResource.cache
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\obj\Debug\ReaderPorts.csproj.CoreCompileInputs.cache
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\obj\Debug\ReaderPorts.csproj.CopyComplete
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\obj\Debug\ReaderPorts.exe
+D:\C#\ComPort (26.01.2023 10.20)\ReaderPorts\obj\Debug\ReaderPorts.pdb
+D:\C#\ComPort\ReaderPorts\obj\Debug\ReaderPorts.MainForm.resources
+D:\C#\ComPort\ReaderPorts\bin\Debug\NModbus4.dll
+D:\C#\ComPort\ReaderPorts\bin\Debug\NModbus4.xml
