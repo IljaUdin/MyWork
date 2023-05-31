@@ -1,7 +1,0 @@
-CMD
-
-D:\C#\APU\APU\bin\Debug\Bootloader>main.dist\main.exe COM21 bu600_dspic_80pin.bin
-
-COM21 - номер ком-порта
-bu600_dspic_80pin.bin - выбор файла
-
