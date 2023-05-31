@@ -1,0 +1,33 @@
+﻿<Window x:Class="EncoderWPF.ParametersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EncoderWPF"
+        mc:Ignorable="d"
+        Title="ParametersWindow" Height="350" Width="200">
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.Row="0" Header="Напряжение 3V3 (мВ)" Margin="10,10">
+            <TextBox x:Name="Voltage3VTextBox" Margin="10,5" TextAlignment="Center" Text="{Binding Voltage3VTextBoxText}"/>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Header="Напряжение 5V36 (мВ)" Margin="10,10">
+            <TextBox x:Name="Voltage5VTextBox" Margin="10,5" TextAlignment="Center" Text="{Binding Voltage5VTextBoxText}"/>
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Header="Напряжение 27V (мВ)" Margin="10,10">
+            <TextBox x:Name="Voltage27VTextBox" Margin="10,5" TextAlignment="Center" Text="{Binding Voltage27VTextBoxText}"/>
+        </GroupBox>
+
+        <GroupBox Grid.Row="3" Header="Температура платы (С)" Margin="10,10">
+            <TextBox x:Name="TemperaturePlateTextBox" Margin="10,5" TextAlignment="Center" Text="{Binding TemperaturePlateTextBoxText}"/>
+        </GroupBox>
+    </Grid>
+</Window>
