@@ -12,32 +12,21 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace EncoderWPF
 {
     internal class MainViewModel : ViewModelBase, INotifyPropertyChanged, IDataErrorInfo
     {
-        ResultsProcessing _resultsProcessing;
+        ResultsProcessing resultsProcessing;
+
         ObservableCollection<string> _portsNames;
-        string _stateConnectionButton = "Подключить";
-        string _portsComboBoxText;
-        bool _portsComboBoxEnabled = true;
-        string _speedComboBoxPropertyText;
-        bool _speedComboBoxEnabled = true;
-        int _addressDeviceNumericUpDownValue;
-        bool _addressDeviceNumericUpDownEnabled = true;
-        string _mystTypeComboBoxText;
-        string _exchngSpdInWorkComboBoxText;
-        int _addrssDvsInWorkTextBoxValue;
-        string _mastPositionTextBoxPropertyText;
-        string _mastPositionProgressBarValue, _mastPositionProgressBarMinimum;
-        string _mastPositionLabelContent;
-        string _errorMessageListBoxText;
         public ObservableCollection<string> PortsNames
         {
             get { return _portsNames; }
             set { Set(ref _portsNames, value); }
         }
+        string _stateConnectionButton = "Подключить";
         public string StateConnectionButton
         {
             get { return _stateConnectionButton; }
@@ -50,6 +39,7 @@ namespace EncoderWPF
                 }
             }
         }
+        bool _portsComboBoxEnabled = true;
         public bool PortsComboBoxEnabled
         {
             get { return _portsComboBoxEnabled; }
@@ -62,6 +52,7 @@ namespace EncoderWPF
                 }
             }
         }
+        string _portsComboBoxText;
         public string PortsComboBoxText
         {
             get { return _portsComboBoxText; }
@@ -74,6 +65,7 @@ namespace EncoderWPF
                 }
             }
         }
+        string _speedComboBoxPropertyText;
         public string SpeedComboBoxPropertyText
         {
             get { return _speedComboBoxPropertyText; }
@@ -86,6 +78,7 @@ namespace EncoderWPF
                 }
             }
         }
+        bool _speedComboBoxEnabled = true;
         public bool SpeedComboBoxEnabled
         {
             get { return _speedComboBoxEnabled; }
@@ -98,6 +91,7 @@ namespace EncoderWPF
                 }
             }
         }
+        int _addressDeviceNumericUpDownValue = 14;
         public int AddressDeviceNumericUpDownValue
         {
             get { return _addressDeviceNumericUpDownValue; }
@@ -129,6 +123,7 @@ namespace EncoderWPF
         }
         public string Error { get { return null; } }
 
+        bool _addressDeviceNumericUpDownEnabled = true;
         public bool AddressDeviceNumericUpDownEnabled
         {
             get { return _addressDeviceNumericUpDownEnabled; }
@@ -141,6 +136,7 @@ namespace EncoderWPF
                 }
             }
         }
+        string _mystTypeComboBoxText;
         public string MystTypeComboBoxText
         {
             get { return _mystTypeComboBoxText; }
@@ -153,6 +149,7 @@ namespace EncoderWPF
                 }
             }
         }
+        string _exchngSpdInWorkComboBoxText;
         public string ExchngSpdInWorkComboBoxText
         {
             get { return _exchngSpdInWorkComboBoxText; }
@@ -165,8 +162,8 @@ namespace EncoderWPF
                 }
             }
         }
-        
-            public int AddrssDvsInWorkTextBoxValue
+        int _addrssDvsInWorkTextBoxValue;
+        public int AddrssDvsInWorkTextBoxValue
         {
             get { return _addrssDvsInWorkTextBoxValue; }
             set
@@ -178,6 +175,7 @@ namespace EncoderWPF
                 }
             }
         }
+        string _mastPositionTextBoxPropertyText;
         public string MastPositionTextBoxPropertyText
         {
             get { return _mastPositionTextBoxPropertyText; }
@@ -190,6 +188,7 @@ namespace EncoderWPF
                 }
             }
         }
+        string _mastPositionProgressBarValue;
         public string MastPositionProgressBarValue
         {
             get { return _mastPositionProgressBarValue; }
@@ -202,6 +201,7 @@ namespace EncoderWPF
                 }
             }
         }
+        string _mastPositionProgressBarMinimum;
         public string MastPositionProgressBarMinimum
         {
             get { return _mastPositionProgressBarMinimum; }
@@ -214,6 +214,7 @@ namespace EncoderWPF
                 }
             }
         }
+        string _mastPositionLabelContent;
         public string MastPositionLabelContent
         {
             get { return _mastPositionLabelContent; }
@@ -226,6 +227,7 @@ namespace EncoderWPF
                 }
             }
         }
+        string _errorMessageListBoxText;
         public string ErrorMessageListBoxText
         {
             get { return _errorMessageListBoxText; }
@@ -248,14 +250,14 @@ namespace EncoderWPF
         public ICommand ConnectionCommand { get; }
         public ICommand ChangeZeroPositionValueCommand { get; }
         public ICommand MystTypeChangeCommand { get; }
-        public ICommand ChangeSpeedCommand { get; }
-        public ICommand ChangeAddressCommand { get; }
-        
+        public ICommand SpeedChangeCommand { get; }
+        public ICommand AddressChangeCommand { get; }
+
 
         public new event PropertyChangedEventHandler PropertyChanged;
         public MainViewModel()
         {
-            _resultsProcessing = new ResultsProcessing(this);
+            resultsProcessing = new ResultsProcessing(this);
 
             PortsNames = new ObservableCollection<string>();
 
@@ -269,24 +271,24 @@ namespace EncoderWPF
             ConnectionCommand = new RelayCommand(Connection);
             ChangeZeroPositionValueCommand = new RelayCommand(ChangeZeroPositionValue);
             MystTypeChangeCommand = new RelayCommand(MystTypeChange);
-            ChangeSpeedCommand = new RelayCommand(ChangeSpeed);
-            ChangeAddressCommand = new RelayCommand(ChangeAddress);
+            SpeedChangeCommand = new RelayCommand(SpeedChange);
+            AddressChangeCommand = new RelayCommand(AddressChange);
         }
         void LoadParametersWindow()
         {
-            _resultsProcessing.LoadParametersWindow();
+            resultsProcessing.LoadParametersWindow();
         }
         void Diagnostics()
         {
-            _resultsProcessing.Diagnostics();
+            resultsProcessing.Diagnostics();
         }
         void UpdateFirmware()
         {
-            _resultsProcessing.UpdateFirmware();
+            resultsProcessing.UpdateFirmware();
         }
         void DeviceIdentification()
         {
-            MessageBox.Show($"{_resultsProcessing.DeviceInformation}");
+            MessageBox.Show($"{resultsProcessing.DeviceInformation}");
         }
         void Close()
         {
@@ -306,23 +308,23 @@ namespace EncoderWPF
         }
         void Connection()
         {
-            _resultsProcessing.Connection();
+            resultsProcessing.Connection();
         }
         void ChangeZeroPositionValue()
         {
-            _resultsProcessing.ChangeZeroPositionValue();
+            resultsProcessing.ChangeZeroPositionValue();
         }
         void MystTypeChange()
         {
-            _resultsProcessing.MystTypeChange();
+            resultsProcessing.MystTypeChange();
         }
-        void ChangeSpeed()
+        void SpeedChange()
         {
-            _resultsProcessing.ChangeSpeed();
+            resultsProcessing.SpeedChange();
         }
-        void ChangeAddress()
+        void AddressChange()
         {
-            _resultsProcessing.ChangeAddress();
+            resultsProcessing.AddressChange();
         }
         protected virtual void OnPropertyChanged(string propertyName)
         {

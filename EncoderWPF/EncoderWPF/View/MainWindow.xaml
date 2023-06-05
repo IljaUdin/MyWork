@@ -1,0 +1,223 @@
+﻿<Window x:Class="EncoderWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EncoderWPF"
+        mc:Ignorable="d"
+        xmlns:controls="clr-namespace:ControlLib;assembly=NumericUpDown"
+        Title="MainWindow" Height="450" Width="800" FontFamily="Times New Roman">
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu
+            Grid.Row="0">
+            <MenuItem Header="Файл">
+                <MenuItem x:Name="ParametersMenuItem" Header="Параметры" Command="{Binding LoadParametersWindowCommand}"/>
+                <MenuItem Header="Диагностика" Command="{Binding DiagnosticsCommand}"/>
+                <MenuItem Header="Обновить прошивку" Command="{Binding UpdateFirmwareCommand}"/>
+                <MenuItem Header="Информация об устройстве" Command="{Binding DeviceIdentificationCommand}"/>
+                <Separator/>
+                <MenuItem Header="Закрыть" Command="{Binding CloseCommand}"/>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Очистка окна сообщений" Command="{Binding ErrorMessageListBoxClearButton}">
+
+            </MenuItem>
+        </Menu>
+
+
+        <Viewbox Grid.Row="1">
+            <StackPanel 
+                    Background="AliceBlue"
+                    Orientation="Horizontal">
+                <GroupBox Header="Подключение"
+                      Margin="10">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="RefreshButton"
+                              Width="100" Height="25"
+                              Margin="10,10"
+                              Content="Обновить"
+                              Command="{Binding RefreshPortsCommand}">
+
+                        </Button>
+
+                        <Button x:Name="ConnectionButton"
+                              Width="100" Height="25"
+                              Margin="10,10"
+                              Content="{Binding StateConnectionButton}"
+                              Command="{Binding ConnectionCommand}">
+                        </Button>
+
+                        <ComboBox x:Name="PortsComboBox"
+                              Width="100" Height="25"
+                              Margin="10,10"
+                              Padding="5"
+                              IsEnabled="{Binding PortsComboBoxEnabled}"
+                              ItemsSource="{Binding PortsNames}"
+                              Text="{Binding PortsComboBoxText}"
+                              SelectedIndex="0">
+                        </ComboBox>
+
+                        <ComboBox x:Name="SpeedComboBox"
+                              Width="100" Height="25"
+                              Margin="10,10"
+                              Padding="5"
+                              IsEnabled="{Binding SpeedComboBoxEnabled}"
+                              Text="{Binding SpeedComboBoxPropertyText}">
+                            <ComboBoxItem Content="Автопоиск"/>
+                            <ComboBoxItem Content="9600"/>
+                            <ComboBoxItem Content="14400"/>
+                            <ComboBoxItem Content="19200"/>
+                            <ComboBoxItem Content="38400"/>
+                            <ComboBoxItem Content="56000"/>
+                            <ComboBoxItem Content="57600"/>
+                            <ComboBoxItem Content="115200"/>
+                        </ComboBox>
+
+                        <TextBox
+                            x:Name="AddressDeviceNumericUpDown"
+                            Margin="10, 10"
+                            Width="100" Height="25"
+                            Padding="5"
+                            IsEnabled="{Binding AddressDeviceNumericUpDownEnabled}"
+                            Text="{Binding AddressDeviceNumericUpDownValue, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                            TextAlignment="Center">
+                        </TextBox>
+
+                        <!--
+                        <controls:NumericUpDown 
+                            x:Name="AddressDeviceNumericUpDown"
+                            Margin="10, 10"
+                            Width="100" Height="25"
+                            IsEnabled="{Binding AddressDeviceNumericUpDownEnabled}"
+                            Value="{Binding AddressDeviceNumericUpDownValue, UpdateSourceTrigger=PropertyChanged}"
+                            TextBlock.TextAlignment="Center"
+                            MinValue="1" 
+                            MaxValue="247" 
+                            Increment="1">
+                        </controls:NumericUpDown>
+                        -->
+
+                    </StackPanel>
+                </GroupBox>
+
+                <Button x:Name="ChangeZeroPositionValueButton"
+                    Width="130" Height="50"
+                    Margin="10,10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Command="{Binding ChangeZeroPositionValueCommand}">
+                    <TextBlock Text="Задать нулевое положение"
+                           TextWrapping="Wrap" 
+                           TextAlignment="Center"/>
+                </Button>
+            </StackPanel>
+        </Viewbox>
+
+        <Viewbox Grid.Row="2">
+            <UniformGrid Rows="1" Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+                <GroupBox Header="Тип мачты" Margin="10,10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ComboBox Grid.Row="0" x:Name="MystTypeComboBox" Margin="10,10" Text="{Binding MystTypeComboBoxText}" >
+                            <ComboBoxItem Content="ПМ-1"/>
+                            <ComboBoxItem Content="ПМ-2"/>
+                            <ComboBoxItem Content="ПМ-3"/>
+                        </ComboBox>
+
+                        <Button Grid.Row="1" x:Name="MystTypeChangeButton" Margin="10,10" Content="Изменить" Command="{Binding MystTypeChangeCommand}"></Button>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Скорость обмена" Margin="10,10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ComboBox Grid.Row="0" x:Name="ExchngSpdInWorkComboBox" Margin="10, 10" Text="{Binding ExchngSpdInWorkComboBoxText, UpdateSourceTrigger=PropertyChanged}">
+                            <ComboBoxItem Content="9600"/>
+                            <ComboBoxItem Content="14400"/>
+                            <ComboBoxItem Content="19200"/>
+                            <ComboBoxItem Content="38400"/>
+                            <ComboBoxItem Content="56000"/>
+                            <ComboBoxItem Content="57600"/>
+                            <ComboBoxItem Content="115200"/>
+                        </ComboBox>
+
+                        <Button Grid.Row="1" x:Name="SpeedChangeButton" Margin="10,10" Content="Изменить" Command="{Binding SpeedChangeCommand}"></Button>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Адрес устройства" Margin="10,10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBox
+                            Grid.Row="0"
+                            x:Name="AddrssDvsInWorkTextBox"
+                            Margin="10, 10"
+                            Padding="5"
+                            Width="100" Height="25"
+                            Text="{Binding AddrssDvsInWorkTextBoxValue, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                            TextAlignment="Center">
+                        </TextBox>
+                        <!--
+                        <controls:NumericUpDown 
+                            Grid.Row="0"
+                            x:Name="AddrssDvsInWorkNumericUpDown"
+                            Margin="10, 10"
+                            MinValue="1" 
+                            MaxValue="255" 
+                            Increment="1" >
+                        </controls:NumericUpDown>
+                        -->
+                        <Button Grid.Row="1" x:Name="AddressChangeCommand" Margin="10,5" Content="Изменить" Command="{Binding ChangeAddressCommand}"></Button>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Положение мачты (мм)" Margin="10,10">
+                    <TextBox 
+                             x:Name="MastPositionTextBox" IsEnabled="False" Width="100" Height="25" Margin="10,10" Padding="5"
+                             Text="{Binding MastPositionTextBoxPropertyText}" HorizontalAlignment="Center" TextAlignment="Center">
+                    </TextBox>
+                </GroupBox>
+
+
+            </UniformGrid>
+        </Viewbox>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ProgressBar Grid.Column="0" Margin="10, 5" x:Name="MastPositionProgressBar" Value="{Binding MastPositionProgressBarValue}" Minimum="{Binding MastPositionProgressBarMinimum}" Maximum="8010"/>
+            <Label Grid.Column="1" Margin="30,5" Height="25" Width="150" x:Name="MastPositionLabel" Content="{Binding MastPositionLabelContent}"/>
+        </Grid>
+
+        <!--Для того чтобы работал AutoScroll создан новый класс AutoScrollTextBox-->
+        <local:AutoScrollTextBox Grid.Row="4" x:Name="ErrorMessageListBox" Margin="10" Text="{Binding ErrorMessageListBoxText, UpdateSourceTrigger=PropertyChanged}" 
+                 ScrollViewer.VerticalScrollBarVisibility="Visible">
+                 
+
+        </local:AutoScrollTextBox>
+
+    </Grid>
+</Window>

@@ -8,6 +8,51 @@ namespace EncoderWPF
 {
     internal static class ErrorsAndDiagnostics
     {
+        static string _deviceInformation;
+
+        public static string DeviceInformation
+        { 
+            get { return _deviceInformation; } 
+        }
+        /// <summary>
+        /// Get Information(ID Device, Firmware version, Firmware date) 
+        /// </summary>
+        public static void DeviceIdentification(CreateNewConnect newConnect)
+        {
+            byte begin = 0;
+
+            List<int> requestValidationResult = new List<int>();
+
+            requestValidationResult = newConnect.GetMassData(begin);
+
+            if (requestValidationResult.Count > 0)
+            {
+                string identificationNumber = requestValidationResult[0].ToString("X");
+
+                string date = requestValidationResult[1].ToString(); // прием входной строки дня и месяца
+                string day = " ";
+                string month = " ";
+                if (date.Count() == 4)
+                {
+                    day = date.Substring(0, 1); // извлекаем первые цифры как день
+                    month = date.Substring(2, 2); // извлекаем последние цифры как месяц
+                }
+                else if (date.Count() == 5)
+                {
+                    day = date.Substring(0, 2); // извлекаем первые цифры как день
+                    month = date.Substring(3, 2); // извлекаем последние цифры как месяц
+                }
+
+                string versionAndYear = requestValidationResult[2].ToString();
+                string programVersion = versionAndYear.Substring(0, 1);
+                string programSubversion = versionAndYear.Substring(1, 2);
+                string year = versionAndYear.Substring(3, 2);
+
+                string resultDateAndMonth = $"{day}.{month}.{year}";
+
+                _deviceInformation = $"Идентификационный номер устройства - 0x{identificationNumber}. Версия прошивки - {programVersion}.{programSubversion}. Дата прошивки: {resultDateAndMonth}";
+            }
+        }
         public static void DeterminationOfMastTypeAnswer(List<int> requestValidationResult, MainViewModel _mainViewModel)
         {
             if (requestValidationResult.Count > 0)
@@ -59,20 +104,20 @@ namespace EncoderWPF
                 return $"{DateTime.Now} Ошибка запроса данных после установки нулевого положения\n";
             }
         }
-        public static string ChangeSpeedAnswer(List<int> requestValidationResult, MainViewModel _mainViewModel, string newSpeed)
+        public static string SpeedChangeAnswer(List<int> requestValidationResultSpeedChange, MainViewModel _mainViewModel, string newSpeed)
         {
-            if (requestValidationResult.Count > 0)
+            if (requestValidationResultSpeedChange.Count > 0)
             {
-                if (requestValidationResult[0] == 1)
+                if (requestValidationResultSpeedChange[0] == 1)
                 {
                     _mainViewModel.SpeedComboBoxPropertyText = newSpeed.ToString();
                     return $"{DateTime.Now} Скорость успешно изменена\n";
                 }
-                else if (requestValidationResult[0] == 4)
+                else if (requestValidationResultSpeedChange[0] == 4)
                 {
                     return $"{DateTime.Now} Некорректная скорость\n";
                 }
-                else if (requestValidationResult[0] == 5)
+                else if (requestValidationResultSpeedChange[0] == 5)
                 {
                     return $"{DateTime.Now} Ошибка сохранения в EEPROM\n";
                 }
